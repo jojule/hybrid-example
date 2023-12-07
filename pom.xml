@@ -4,14 +4,15 @@
     <modelVersion>4.0.0</modelVersion>
     <!-- Project from https://start.vaadin.com/project/96344ef8-a178-4528-b14e-fa4ea9a5a2df -->
     <groupId>com.example.application</groupId>
-    <artifactId>hybrid2</artifactId>
-    <name>hybrid2</name>
+    <artifactId>hybrid</artifactId>
+    <name>hybrid</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
         <java.version>17</java.version>
         <hilla.version>2.5.0.alpha9</hilla.version>
+        <vaadin.version>24.3.0.beta1</vaadin.version>
     </properties>
 
     <parent>
@@ -59,10 +60,26 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <dependency>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-bom</artifactId>
+                <version>${vaadin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <!-- Replace artifactId with vaadin-core to use only free components -->
+            <artifactId>vaadin</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-spring-boot-starter</artifactId>
+        </dependency>
         <dependency>
             <groupId>dev.hilla</groupId>
             <artifactId>hilla-react</artifactId>
